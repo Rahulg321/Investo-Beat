@@ -4,7 +4,10 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = HeroSlice;
+type HomepageDocumentDataSlicesSlice =
+  | NewsletterSlice
+  | SectionHeadingSlice
+  | HeroSlice;
 
 /**
  * Content for Homepage documents
@@ -69,7 +72,12 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = never;
+type PageDocumentDataSlicesSlice =
+  | ContactImageContentSlice
+  | SectionHeadingSlice
+  | NewsletterSlice
+  | ContactHeroSlice
+  | HeroSlice;
 
 /**
  * Content for Page documents
@@ -133,6 +141,91 @@ export type PageDocument<Lang extends string = string> =
 export type AllDocumentTypes = HomepageDocument | PageDocument;
 
 /**
+ * Default variation for ContactHero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactHeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *ContactHero*
+ */
+type ContactHeroSliceVariation = ContactHeroSliceDefault;
+
+/**
+ * ContactHero Shared Slice
+ *
+ * - **API ID**: `contact_hero`
+ * - **Description**: ContactHero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactHeroSlice = prismic.SharedSlice<
+  "contact_hero",
+  ContactHeroSliceVariation
+>;
+
+/**
+ * Primary content in *ContactImageContent → Primary*
+ */
+export interface ContactImageContentSliceDefaultPrimary {
+  /**
+   * Featured Image field in *ContactImageContent → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_image_content.primary.featured_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  featured_image: prismic.ImageField<never>;
+
+  /**
+   * Quote field in *ContactImageContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_image_content.primary.quote
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  quote: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for ContactImageContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactImageContentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContactImageContentSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ContactImageContent*
+ */
+type ContactImageContentSliceVariation = ContactImageContentSliceDefault;
+
+/**
+ * ContactImageContent Shared Slice
+ *
+ * - **API ID**: `contact_image_content`
+ * - **Description**: ContactImageContent
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactImageContentSlice = prismic.SharedSlice<
+  "contact_image_content",
+  ContactImageContentSliceVariation
+>;
+
+/**
  * Default variation for Hero Slice
  *
  * - **API ID**: `default`
@@ -159,6 +252,101 @@ type HeroSliceVariation = HeroSliceDefault;
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
+/**
+ * Primary content in *Newsletter → Primary*
+ */
+export interface NewsletterSliceDefaultPrimary {
+  /**
+   * Image field in *Newsletter → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: newsletter.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Heading field in *Newsletter → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: newsletter.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *Newsletter → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: newsletter.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Newsletter Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NewsletterSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<NewsletterSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Newsletter*
+ */
+type NewsletterSliceVariation = NewsletterSliceDefault;
+
+/**
+ * Newsletter Shared Slice
+ *
+ * - **API ID**: `newsletter`
+ * - **Description**: Newsletter
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NewsletterSlice = prismic.SharedSlice<
+  "newsletter",
+  NewsletterSliceVariation
+>;
+
+/**
+ * Default variation for SectionHeading Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SectionHeadingSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *SectionHeading*
+ */
+type SectionHeadingSliceVariation = SectionHeadingSliceDefault;
+
+/**
+ * SectionHeading Shared Slice
+ *
+ * - **API ID**: `section_heading`
+ * - **Description**: SectionHeading
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SectionHeadingSlice = prismic.SharedSlice<
+  "section_heading",
+  SectionHeadingSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -176,9 +364,23 @@ declare module "@prismicio/client" {
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      ContactHeroSlice,
+      ContactHeroSliceVariation,
+      ContactHeroSliceDefault,
+      ContactImageContentSlice,
+      ContactImageContentSliceDefaultPrimary,
+      ContactImageContentSliceVariation,
+      ContactImageContentSliceDefault,
       HeroSlice,
       HeroSliceVariation,
       HeroSliceDefault,
+      NewsletterSlice,
+      NewsletterSliceDefaultPrimary,
+      NewsletterSliceVariation,
+      NewsletterSliceDefault,
+      SectionHeadingSlice,
+      SectionHeadingSliceVariation,
+      SectionHeadingSliceDefault,
     };
   }
 }

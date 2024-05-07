@@ -128,8 +128,17 @@ h6 {
   width: min(80%, 55.5rem);
 }
 
+.xl-narrow-container {
+  margin-inline: auto;
+  width: min(75%, 45.5rem);
+}
+
 .block-space-large {
   padding-block: min(9vh, 14rem);
+}
+
+.block-space-xl {
+  padding-block: min(12vh, 16rem);
 }
 
 .block-space {
