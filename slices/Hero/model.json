@@ -10,7 +10,46 @@
       "docURL": "...",
       "version": "initial",
       "description": "Default",
-      "imageUrl": ""
+      "imageUrl": "",
+      "primary": {
+        "hero_image": {
+          "type": "Image",
+          "config": {
+            "label": "Hero Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "designation": {
+          "type": "Text",
+          "config": {
+            "label": "Designation",
+            "placeholder": ""
+          }
+        },
+        "tagline": {
+          "type": "Text",
+          "config": {
+            "label": "tagline",
+            "placeholder": ""
+          }
+        },
+        "tag": {
+          "type": "Text",
+          "config": {
+            "label": "Tag",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

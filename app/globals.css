@@ -103,6 +103,10 @@
   .lead {
     @apply text-xl text-muted-foreground;
   }
+
+  .active-link {
+    @apply text-mainO;
+  }
 }
 
 html {
