@@ -1,6 +1,7 @@
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
+import { useEffect } from "react";
 
 /**
  * Props for `Hero`.
@@ -19,15 +20,11 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     >
       <div className="block-space-large flex basis-3/5 flex-col justify-center gap-4 text-pretty px-16">
         <span className="font-semibold uppercase tracking-wider text-mainO">
-          WELCOME
+          {slice.primary.tag}
         </span>
-        <h1>I’m Dianna Adams</h1>
-        <h2>Food Critic / Influencer / Blogger</h2>
-        <span>
-          Massa urna magnis dignissim id euismod porttitor vitae etiam viverra
-          nunc at adipiscing sit morbi aliquet mauris porttitor nisi, senectus
-          pharetra, ac porttitor orci.
-        </span>
+        <h1>{slice.primary.heading}</h1>
+        <h2>{slice.primary.designation}</h2>
+        <span>{slice.primary.tagline}</span>
         <button className="mt-4 w-fit border-2 border-mainO bg-white px-8 py-2 font-semibold text-mainO">
           Join Now
         </button>

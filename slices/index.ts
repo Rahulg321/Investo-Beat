@@ -8,4 +8,5 @@ export const components = {
   hero: dynamic(() => import("./Hero")),
   newsletter: dynamic(() => import("./Newsletter")),
   section_heading: dynamic(() => import("./SectionHeading")),
+  text_block: dynamic(() => import("./TextBlock")),
 };
