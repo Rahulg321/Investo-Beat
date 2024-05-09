@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <footer className="block-space bg-gray-200">
       <div className="big-container">
-        <div className="mb-8 flex items-center justify-between">
+        <div className="mb-8 flex flex-col items-center justify-between gap-4 md:flex-row">
           <div>
             <Image src={logo} alt="Company Logo" width={50} height={50} />
           </div>
@@ -30,7 +30,7 @@ const Footer = () => {
             <SocialMediaIcon icon={<FaLinkedin />} />
           </div>
         </div>
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col items-center justify-between md:flex-row">
           <span>© 2024 Food Blogger & Influencer</span>
           <span>Powered by Food Blogger & Influencer</span>
         </div>

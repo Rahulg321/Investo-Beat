@@ -17,8 +17,8 @@ const Newsletter = ({ slice }: NewsletterProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="block-space-large "
     >
-      <div className="big-container flex border-8  px-4">
-        <div className="aspect-h-1 aspect-w-3 relative top-[-40px] basis-1/2">
+      <div className="big-container flex flex-col border-8 md:flex-row">
+        <div className="aspect-h-1 aspect-w-1 relative basis-1/2 md:aspect-h-1 md:aspect-w-3 lg:top-[-80px]">
           <PrismicNextImage
             field={slice.primary.image}
             fill

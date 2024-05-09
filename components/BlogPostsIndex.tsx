@@ -31,6 +31,27 @@ export default async function BlogPostsIndex({
             </div>
           );
         })}
+        {blogposts.results.map((post, index) => {
+          return (
+            <div key={index}>
+              <BlogCard post={post} />
+            </div>
+          );
+        })}
+        {blogposts.results.map((post, index) => {
+          return (
+            <div key={index}>
+              <BlogCard post={post} />
+            </div>
+          );
+        })}
+        {blogposts.results.map((post, index) => {
+          return (
+            <div key={index}>
+              <BlogCard post={post} />
+            </div>
+          );
+        })}
       </div>
       <div className="mt-auto">
         <BlogPagination

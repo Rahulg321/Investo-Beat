@@ -16,7 +16,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex min-h-screen"
+      className="flex min-h-screen flex-col-reverse md:flex-row"
     >
       <div className="block-space-large flex basis-3/5 flex-col justify-center gap-4 text-pretty px-16">
         <span className="font-semibold uppercase tracking-wider text-mainO">
@@ -29,8 +29,8 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           Join Now
         </button>
       </div>
-      <div className="basis-2/5 bg-mainO">
-        <div className="aspect-h-3 aspect-w-4 relative left-[-15px] top-[100px]">
+      <div className="block-space basis-2/5 content-center bg-mainO">
+        <div className="aspect-h-1 aspect-w-1 relative md:aspect-h-3 md:aspect-w-4 md:left-[-15px] ">
           <div>
             <PrismicNextImage
               field={slice.primary.hero_image}

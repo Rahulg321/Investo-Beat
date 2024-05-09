@@ -27,7 +27,7 @@ const Header = ({ classname }: HeaderProps) => {
               <NameLogo />
               <button
                 aria-label="Open menu"
-                className="block text-2xl text-mainO md:hidden"
+                className="block text-2xl text-mainO text-yellow-400 md:hidden"
                 onClick={() => setIsOpen(true)}
               >
                 <MdMenu />
@@ -41,7 +41,7 @@ const Header = ({ classname }: HeaderProps) => {
             >
               <button
                 aria-label="Close menu"
-                className="fixed right-4 top-3 block p-2 text-2xl md:hidden "
+                className="fixed right-4 top-3 block border border-yellow-400 p-2 text-2xl md:hidden "
                 onClick={() => setIsOpen(false)}
               >
                 <MdClose />
@@ -113,13 +113,13 @@ function DesktopMenu() {
 
 function SocialMediaMenu() {
   return (
-    <div className="ml-auto mr-8 flex items-center gap-4">
+    <div className="ml-auto mr-8 hidden gap-4 md:flex md:items-center">
       <div className="flex items-center gap-4">
         <SocialMediaIcon icon={<FaLinkedin />} />
         <SocialMediaIcon icon={<FaSquareXTwitter />} />
         <SocialMediaIcon icon={<FaInstagram />} />
       </div>
-      <button className="w-fit border-2 border-white px-4 py-2 font-semibold text-mainO text-white">
+      <button className="w-fit border-2 border-white p-2 font-semibold text-mainO text-white lg:px-4 lg:py-2">
         Join Now
       </button>
     </div>

@@ -2,36 +2,22 @@ import React, { useEffect } from "react";
 
 const ContactForm = () => {
   return (
-    <div className="relative left-[-90px] h-fit border-8 border-gray-400 bg-white p-8">
+    <div className="relative h-fit border-8 border-gray-400 bg-white p-8 lg:left-[-50px]">
       <h3 className="mb-4">Lets Talk</h3>
-      <form
-        action=""
-        className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6"
-      >
-        <div>
-          <label htmlFor="first-name" className="font-bold">
-            First Name
+      <form action="" className="grid grid-cols-1 gap-4 md:gap-6">
+        <div className="flex flex-col">
+          <label htmlFor="name" className="font-bold">
+            Name
           </label>
           <input
             type="text"
-            id="first-name"
+            id="name"
             className="bg-gray-200 p-4"
             placeholder="John "
           />
         </div>
 
-        <div>
-          <label htmlFor="last-name" className="font-bold">
-            Last Name
-          </label>
-          <input
-            type="text"
-            id="last-name"
-            className="bg-gray-200 p-4"
-            placeholder="Doe "
-          />
-        </div>
-        <div className="col-span-2 flex flex-col">
+        <div className="flex flex-col">
           <label htmlFor="email" className="font-bold">
             Email
           </label>
@@ -42,7 +28,7 @@ const ContactForm = () => {
             placeholder="johndoe@gmail.com"
           />
         </div>
-        <div className="col-span-2 flex flex-col">
+        <div className="flex flex-col">
           <label htmlFor="subject" className="font-bold">
             Subject
           </label>
@@ -53,14 +39,14 @@ const ContactForm = () => {
             placeholder="Subject"
           />
         </div>
-        <div className="col-span-2 flex flex-col">
+        <div className="flex flex-col">
           <label htmlFor="message" className="font-bold">
             Message
           </label>
           <textarea
             name=""
             id="message"
-            className="col-span-2 bg-gray-200 p-4"
+            className="bg-gray-200 p-4"
             placeholder="message"
           ></textarea>
         </div>

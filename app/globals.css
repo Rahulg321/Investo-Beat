@@ -169,6 +169,18 @@ h6 {
   margin-bottom: 2em;
 }
 
+@media screen and (max-width: 458px) {
+  .blog-index {
+    columns: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .blog-index {
+    columns: 2;
+  }
+}
+
 @supports (grid-template-rows: masonry) {
   .blog-index {
     display: grid;
