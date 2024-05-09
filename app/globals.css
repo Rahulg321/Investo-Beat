@@ -158,3 +158,27 @@ h6 {
   min-height: 100dvh;
   grid-template-rows: auto 1fr auto;
 }
+
+.blog-index {
+  display: column;
+  columns: 3;
+}
+
+.blog-index > * {
+  break-inside: avoid;
+  margin-bottom: 2em;
+}
+
+@supports (grid-template-rows: masonry) {
+  .blog-index {
+    display: grid;
+    gap: 2em;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: masonry;
+  }
+
+  .blog-index > * {
+    break-inside: avoid;
+    margin-bottom: 0;
+  }
+}

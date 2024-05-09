@@ -23,7 +23,7 @@ const ContactImageContent = ({
       className="block-space"
     >
       <div className="big-container">
-        <div className="flex">
+        <div className="flex flex-col md:flex-row">
           <div className="aspect-h-2 aspect-w-4 relative flex basis-1/2">
             <PrismicNextImage
               field={slice.primary.featured_image}

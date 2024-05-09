@@ -1,5 +1,5 @@
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 
 /**
  * Props for `TextBlock`.
@@ -14,8 +14,11 @@ const TextBlock = ({ slice }: TextBlockProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="narrow-container block-space"
     >
-      Placeholder component for text_block (variation: {slice.variation}) Slices
+      <div className="prose md:prose-xl">
+        <PrismicRichText field={slice.primary.textblock} />
+      </div>
     </section>
   );
 };

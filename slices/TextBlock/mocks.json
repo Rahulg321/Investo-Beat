@@ -2,7 +2,19 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"textblock": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Id qui nostrud anim est quis reprehenderit et enim mollit incididunt cillum magna ex amet. Amet commodo dolore culpa aute. Ipsum labore reprehenderit ex cillum proident dolore."
+						}
+					}
+				]
+			}
+		},
 		"items": []
 	}
 ]

@@ -41,11 +41,21 @@
           "placeholder": ""
         }
       },
+      "small_description": {
+        "type": "Text",
+        "config": {
+          "label": "Small Description",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "hero": {
+              "type": "SharedSlice"
+            },
             "text_block": {
               "type": "SharedSlice"
             }
