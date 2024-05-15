@@ -21,34 +21,11 @@ export default async function BlogPostsIndex({
 
   return (
     <div className={clsx("flex flex-col py-6", classname)}>
-      <h1 className="text-mainC text-center">All Posts</h1>
-
-      <div className="blog-index mt-6">
+      <div className="blog-index">
         {blogposts.results.map((post, index) => {
           return (
-            <div key={index}>
-              <BlogCard post={post} />
-            </div>
-          );
-        })}
-        {blogposts.results.map((post, index) => {
-          return (
-            <div key={index}>
-              <BlogCard post={post} />
-            </div>
-          );
-        })}
-        {blogposts.results.map((post, index) => {
-          return (
-            <div key={index}>
-              <BlogCard post={post} />
-            </div>
-          );
-        })}
-        {blogposts.results.map((post, index) => {
-          return (
-            <div key={index}>
-              <BlogCard post={post} />
+            <div key={index} className="mb-[2em]">
+              <BlogCard post={post} classnames="" />
             </div>
           );
         })}

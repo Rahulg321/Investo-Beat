@@ -31,8 +31,12 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col items-center justify-between md:flex-row">
-          <span>© 2024 Food Blogger & Influencer</span>
-          <span>Powered by Food Blogger & Influencer</span>
+          <span className="text-sm font-semibold">
+            © 2024 Food Blogger & Influencer
+          </span>
+          <span className="text-sm font-semibold">
+            Powered by Food Blogger & Influencer
+          </span>
         </div>
       </div>
     </footer>

@@ -20,14 +20,14 @@ const Header = ({ classname }: HeaderProps) => {
 
   return (
     <>
-      <header className={clsx(" absolute w-full px-2 py-1", classname)}>
+      <header className={clsx("absolute w-full px-2 py-1", classname)}>
         <nav aria-label="Main-navigation">
           <ul className="flex flex-col md:m-4 md:flex-row md:items-center md:rounded-xl">
             <div className="flex items-center justify-between">
               <NameLogo />
               <button
                 aria-label="Open menu"
-                className="block text-2xl text-mainO text-yellow-400 md:hidden"
+                className="block text-2xl text-black  md:hidden"
                 onClick={() => setIsOpen(true)}
               >
                 <MdMenu />
@@ -41,7 +41,7 @@ const Header = ({ classname }: HeaderProps) => {
             >
               <button
                 aria-label="Close menu"
-                className="fixed right-4 top-3 block border border-yellow-400 p-2 text-2xl md:hidden "
+                className="fixed right-4 top-3 block p-2 text-2xl text-white md:hidden "
                 onClick={() => setIsOpen(false)}
               >
                 <MdClose />
@@ -50,7 +50,7 @@ const Header = ({ classname }: HeaderProps) => {
                 return (
                   <Link
                     key={index}
-                    className={clsx("text-2xl font-semibold", {
+                    className={clsx("text-2xl font-semibold text-white", {
                       "active-link": pathname === e.navlink,
                     })}
                     href={e.navlink}

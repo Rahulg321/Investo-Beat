@@ -1,18 +1,20 @@
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
+import clsx from "clsx";
 import Link from "next/link";
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 type BlogCardProps = {
   post: Content.BlogpostDocument;
+  classnames?: string;
 };
 
-const BlogCard = ({ post }: BlogCardProps) => {
+const BlogCard = ({ post, classnames }: BlogCardProps) => {
   const { title, small_description, featured_image, author } = post.data;
 
   return (
-    <div className="bg-gray-200 p-4">
+    <div className={clsx("bg-gray-200 p-4", classnames)}>
       <div className="">
         <PrismicNextImage field={featured_image} className="object-cover" />
       </div>

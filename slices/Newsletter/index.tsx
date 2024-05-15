@@ -25,19 +25,19 @@ const Newsletter = ({ slice }: NewsletterProps): JSX.Element => {
             className="object-cover"
           />
         </div>
-        <div className="basis-1/2 p-4">
+        <div className="basis-1/2 p-4 md:px-6 md:py-12">
           <div className="mb-4">
-            <h1>{slice.primary.heading}</h1>
-            <p>{slice.primary.tagline}</p>
+            <h2 className="text-center">{slice.primary.heading}</h2>
+            <p className="">{slice.primary.tagline}</p>
           </div>
           <div className="">
             <form action="flex ">
               <input
                 type="text"
                 placeholder="Email Address"
-                className="bg-gray-200 p-4"
+                className="bg-gray-200 p-2 md:p-4"
               />
-              <button className="mt-4 border-2 border-mainO bg-white p-4 font-semibold text-mainO">
+              <button className="mt-4 border-2 border-mainO bg-white p-2 font-semibold text-mainO md:p-4">
                 Subscribe
               </button>
             </form>
