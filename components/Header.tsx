@@ -83,7 +83,7 @@ function NameLogo({}: {}) {
         aria-label="Home page"
         className="font-bold text-black md:text-2xl"
       >
-        Alisha Bajaj
+        Investo Beat
       </Link>
     </div>
   );
@@ -99,7 +99,7 @@ function DesktopMenu() {
           <Link
             key={index}
             className={clsx("font-bold text-black", {
-              "active-link text-mainO": pathname === e.navlink,
+              underline: pathname === e.navlink,
             })}
             href={e.navlink}
           >

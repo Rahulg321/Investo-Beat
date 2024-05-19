@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "page_hero_section": {
+              "type": "SharedSlice"
+            },
             "image_content": {
               "type": "SharedSlice"
             },

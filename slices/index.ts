@@ -9,6 +9,7 @@ export const components = {
   hero: dynamic(() => import("./Hero")),
   image_content: dynamic(() => import("./ImageContent")),
   newsletter: dynamic(() => import("./Newsletter")),
+  page_hero_section: dynamic(() => import("./PageHeroSection")),
   section_heading: dynamic(() => import("./SectionHeading")),
   text_block: dynamic(() => import("./TextBlock")),
 };
