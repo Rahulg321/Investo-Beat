@@ -5,6 +5,8 @@ import { SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import ContentBody from "@/components/ContentBody";
+import * as prismic from "@prismicio/client";
+import Head from "next/head";
 
 type Params = { uid: string };
 
@@ -14,8 +16,29 @@ export default async function Page({ params }: { params: Params }) {
     .getByUID("blogpost", params.uid)
     .catch(() => notFound());
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: page.data.title as string,
+    author: {
+      "@type": "Person",
+      name: page.data.author,
+      // The full URL must be provided, including the website's domain.
+      url: new URL("https://investobeat.com/about"),
+    },
+    image: prismic.asImageSrc(page.data.featured_image),
+    datePublished: page.data.publication_date,
+    dateModified: page.last_publication_date,
+  };
+
   return (
     <>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      </Head>
       <ContentBody page={page} />
     </>
   );
@@ -30,6 +53,12 @@ export async function generateMetadata({
   const page = await client
     .getByUID("blogpost", params.uid)
     .catch(() => notFound());
+
+  if (!page)
+    return {
+      title: "Not Found",
+      description: "The page you are looking for does not exist.",
+    };
 
   return {
     title: page.data.meta_title,

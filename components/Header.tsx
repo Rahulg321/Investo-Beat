@@ -86,7 +86,7 @@ function NameLogo({}: {}) {
         className="font-bold text-black md:text-2xl"
       >
         <div>
-          <Image src={logo} alt="Company Logo" width={200} height={200} />
+          <Image src={logo} alt="Company Logo" width={150} height={150} />
         </div>
       </Link>
     </div>

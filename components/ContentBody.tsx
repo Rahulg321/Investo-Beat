@@ -9,7 +9,7 @@ const ContentBody = ({ page }: { page: Content.BlogpostDocument }) => {
 
   return (
     <article>
-      <section className="block-space min-h-[60vh] content-center bg-mainO">
+      <section className="block-space min-h-[80vh] content-center bg-mainO lg:min-h-[70vh]">
         <div className="big-container">
           <h1 className="text-center text-white">{page.data.title}</h1>
           <div className="md flex flex-col items-center justify-between md:flex-row">
