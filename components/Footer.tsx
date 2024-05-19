@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import logo from "@/public/food-blogger-site-logo.svg";
+import logo from "@/public/CroppedLogo.png";
 import { nav } from "@/lib/nav";
 import Link from "next/link";
 import { FaSquareXTwitter } from "react-icons/fa6";
@@ -9,16 +9,16 @@ import { FaLinkedin } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="block-space bg-gray-200">
+    <footer className="block-space border-t-4">
       <div className="big-container">
         <div className="mb-8 flex flex-col items-center justify-between gap-4 md:flex-row">
           <div>
-            <Image src={logo} alt="Company Logo" width={50} height={50} />
+            <Image src={logo} alt="Company Logo" width={200} height={200} />
           </div>
           <div className="flex gap-4">
             {nav.map((e, index) => {
               return (
-                <Link href={e.navlink} key={index}>
+                <Link href={e.navlink} key={index} className="font-semibold">
                   {e.navlabel}
                 </Link>
               );
@@ -32,10 +32,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col items-center justify-between md:flex-row">
           <span className="text-sm font-semibold">
-            © 2024 Food Blogger & Influencer
-          </span>
-          <span className="text-sm font-semibold">
-            Powered by Food Blogger & Influencer
+            © 2024 All Rights Reserved
           </span>
         </div>
       </div>

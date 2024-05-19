@@ -9,6 +9,8 @@ import { nav } from "@/lib/nav";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
+import Image from "next/image";
+import logo from "@/public/CroppedLogo.png";
 
 type HeaderProps = {
   classname?: string;
@@ -83,7 +85,9 @@ function NameLogo({}: {}) {
         aria-label="Home page"
         className="font-bold text-black md:text-2xl"
       >
-        Investo Beat
+        <div>
+          <Image src={logo} alt="Company Logo" width={200} height={200} />
+        </div>
       </Link>
     </div>
   );
