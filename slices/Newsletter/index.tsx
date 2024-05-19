@@ -13,8 +13,6 @@ export type NewsletterProps = SliceComponentProps<Content.NewsletterSlice>;
 const Newsletter = ({ slice }: NewsletterProps): JSX.Element => {
   console.log(slice.primary.image);
   const { image } = slice.primary;
-  const { width, height } = image.dimensions;
-
   return (
     <section
       data-slice-type={slice.slice_type}
