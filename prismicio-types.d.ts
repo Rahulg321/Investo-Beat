@@ -720,6 +720,31 @@ export type PageHeroSectionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *SectionHeading → Primary*
+ */
+export interface SectionHeadingSliceDefaultPrimary {
+  /**
+   * Heading field in *SectionHeading → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_heading.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *SectionHeading → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_heading.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+}
+
+/**
  * Default variation for SectionHeading Slice
  *
  * - **API ID**: `default`
@@ -728,7 +753,7 @@ export type PageHeroSectionSlice = prismic.SharedSlice<
  */
 export type SectionHeadingSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<SectionHeadingSliceDefaultPrimary>,
   never
 >;
 
@@ -843,6 +868,7 @@ declare module "@prismicio/client" {
       PageHeroSectionSliceVariation,
       PageHeroSectionSliceDefault,
       SectionHeadingSlice,
+      SectionHeadingSliceDefaultPrimary,
       SectionHeadingSliceVariation,
       SectionHeadingSliceDefault,
       TextBlockSlice,
