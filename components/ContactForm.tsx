@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 const ContactForm = () => {
   return (
-    <div className="relative h-fit border-8 border-gray-400 bg-white p-8 lg:left-[-50px]">
+    <div className="relative h-fit border-8 border-gray-400 bg-white p-8 lg:bottom-[-20px] lg:left-[-50px]">
       <h3 className="mb-4">Lets Talk</h3>
       <form action="" className="grid grid-cols-1 gap-4 md:gap-6">
         <div className="flex flex-col">

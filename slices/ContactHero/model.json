@@ -10,7 +10,31 @@
       "docURL": "...",
       "version": "initial",
       "description": "Default",
-      "imageUrl": ""
+      "imageUrl": "",
+      "primary": {
+        "address": {
+          "type": "Text",
+          "config": {
+            "label": "Address",
+            "placeholder": ""
+          }
+        },
+        "phone_number": {
+          "type": "Text",
+          "config": {
+            "label": "Phone Number",
+            "placeholder": ""
+          }
+        },
+        "email": {
+          "type": "Text",
+          "config": {
+            "label": "Email",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

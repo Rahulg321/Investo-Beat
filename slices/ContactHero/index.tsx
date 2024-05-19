@@ -1,5 +1,5 @@
 import ContactForm from "@/components/ContactForm";
-import { Content } from "@prismicio/client";
+import { Content, KeyTextField } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import clsx from "clsx";
 import { FaLocationDot } from "react-icons/fa6";
@@ -22,57 +22,29 @@ const ContactHero = ({ slice }: ContactHeroProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex min-h-screen flex-col lg:flex-row"
+      className="flex min-h-[100dvh] flex-col lg:flex-row"
     >
-      <div className="block-space-xl basis-3/5 px-4 md:px-6 lg:px-16">
+      <div className="block-space-xl bg p px- mt-4 flex basis-3/5 flex-col justify-center md:px-12 lg:px-16">
         <div className="mb-6">
           <h1>Contact Me</h1>
-          <p>
-            Massa urna magnis dignissim id euismod porttitor vitae etiam viverra
-            at adipiscing sit morbi aliquet mauris porttitor nisi, senectus
-            pharetra, ac porttitor orci.
-          </p>
         </div>
         <ContactInfoCard
           icon={<FaLocationDot />}
           heading="Address"
-          description="1234 N Spring St, Los Angeles, CA 90012, United States."
+          description={slice.primary.address}
           classname="mb-6"
         />
         <ContactInfoCard
           icon={<FaPhone />}
           heading="Phone"
-          description="+01 - 123 456 7890"
+          description={slice.primary.phone_number}
           classname="mb-6"
         />
         <ContactInfoCard
           icon={<MdEmail />}
           heading="Email"
-          description="mail@example.com"
+          description={slice.primary.email}
         />
-
-        <div className="mt-12">
-          <span className="mb-6 block font-semibold uppercase tracking-wider text-mainO">
-            Follow Me
-          </span>
-          <div className="flex gap-8">
-            <SocialInfoCard
-              icon={<FaInstagram />}
-              heading="1.2M+"
-              description="Subscribers"
-            />
-            <SocialInfoCard
-              icon={<FaYoutube />}
-              heading="1.2M+"
-              description="Followers"
-            />
-            <SocialInfoCard
-              icon={<MdOutlineWifi />}
-              heading="1.2M+"
-              description="Commenters"
-            />
-          </div>
-        </div>
       </div>
       <div className="flex basis-2/5 flex-col justify-center bg-mainO">
         <ContactForm />
@@ -111,7 +83,7 @@ function ContactInfoCard({
 }: {
   icon: any;
   heading: string;
-  description: string;
+  description: string | KeyTextField;
   classname?: string;
 }) {
   return (
@@ -121,7 +93,7 @@ function ContactInfoCard({
         <span className="font-semibold uppercase tracking-widest">
           {heading}
         </span>
-        <span className="block text-2xl font-semibold text-gray-500 md:text-3xl">
+        <span className="block text-xl font-semibold text-gray-500 md:text-2xl lg:text-3xl">
           {description}
         </span>
       </div>

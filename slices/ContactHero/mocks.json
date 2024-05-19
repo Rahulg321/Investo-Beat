@@ -2,7 +2,23 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"address": {
+				"__TYPE__": "FieldContent",
+				"value": "business",
+				"type": "Text"
+			},
+			"phone_number": {
+				"__TYPE__": "FieldContent",
+				"value": "pot",
+				"type": "Text"
+			},
+			"email": {
+				"__TYPE__": "FieldContent",
+				"value": "division",
+				"type": "Text"
+			}
+		},
 		"items": []
 	}
 ]

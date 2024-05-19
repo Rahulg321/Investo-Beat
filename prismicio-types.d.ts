@@ -216,6 +216,17 @@ interface PageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
   slices: prismic.SliceZone<PageDocumentDataSlicesSlice> /**
+   * Meta Title field in *Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: page.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
    * Meta Description field in *Page*
    *
    * - **Field Type**: Text
@@ -223,7 +234,7 @@ interface PageDocumentData {
    * - **API ID Path**: page.meta_description
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
-   */;
+   */
   meta_description: prismic.KeyTextField;
 
   /**
@@ -236,17 +247,6 @@ interface PageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
-
-  /**
-   * Meta Title field in *Page*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: page.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  meta_title: prismic.KeyTextField;
 }
 
 /**
@@ -312,6 +312,41 @@ export type BlogIndexSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ContactHero → Primary*
+ */
+export interface ContactHeroSliceDefaultPrimary {
+  /**
+   * Address field in *ContactHero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_hero.primary.address
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  address: prismic.KeyTextField;
+
+  /**
+   * Phone Number field in *ContactHero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_hero.primary.phone_number
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  phone_number: prismic.KeyTextField;
+
+  /**
+   * Email field in *ContactHero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_hero.primary.email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+}
+
+/**
  * Default variation for ContactHero Slice
  *
  * - **API ID**: `default`
@@ -320,7 +355,7 @@ export type BlogIndexSlice = prismic.SharedSlice<
  */
 export type ContactHeroSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<ContactHeroSliceDefaultPrimary>,
   never
 >;
 
@@ -738,6 +773,7 @@ declare module "@prismicio/client" {
       BlogIndexSliceVariation,
       BlogIndexSliceDefault,
       ContactHeroSlice,
+      ContactHeroSliceDefaultPrimary,
       ContactHeroSliceVariation,
       ContactHeroSliceDefault,
       ContactImageContentSlice,
