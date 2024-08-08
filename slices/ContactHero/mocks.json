@@ -17,6 +17,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "division",
 				"type": "Text"
+			},
+			"secondary_email": {
+				"__TYPE__": "FieldContent",
+				"value": "half",
+				"type": "Text"
 			}
 		},
 		"items": []

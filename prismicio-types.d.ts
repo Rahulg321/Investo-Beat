@@ -345,6 +345,16 @@ export interface ContactHeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   email: prismic.KeyTextField;
+
+  /**
+   * Secondary Email field in *ContactHero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_hero.primary.secondary_email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  secondary_email: prismic.KeyTextField;
 }
 
 /**
@@ -577,6 +587,17 @@ export interface ImageContentSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   featured_image: prismic.ImageField<never>;
+
+  /**
+   * Image Left field in *ImageContent → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: image_content.primary.image_left
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  image_left: prismic.BooleanField;
 }
 
 /**

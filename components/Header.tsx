@@ -10,7 +10,8 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import Image from "next/image";
-import logo from "@/public/CroppedLogo.png";
+// import logo from "@/public/CroppedLogo.png";
+import logo from "@/public/cropped-purple-logo.png";
 
 type HeaderProps = {
   classname?: string;

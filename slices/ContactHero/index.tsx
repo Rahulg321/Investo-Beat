@@ -40,10 +40,11 @@ const ContactHero = ({ slice }: ContactHeroProps): JSX.Element => {
           description={slice.primary.phone_number}
           classname="mb-6"
         />
-        <ContactInfoCard
+        <EmailContactCard
           icon={<MdEmail />}
           heading="Email"
-          description={slice.primary.email}
+          primaryEmail={slice.primary.email}
+          secondaryEmail={slice.primary.secondary_email}
         />
       </div>
       <div className="flex basis-2/5 flex-col justify-center bg-mainO">
@@ -95,6 +96,37 @@ function ContactInfoCard({
         </span>
         <span className="block text-xl font-semibold text-gray-500 md:text-2xl lg:text-3xl">
           {description}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+function EmailContactCard({
+  icon,
+  heading,
+  primaryEmail,
+  secondaryEmail,
+  classname,
+}: {
+  icon: any;
+  heading: string;
+  primaryEmail: string | KeyTextField;
+  secondaryEmail: string | KeyTextField;
+  classname?: string;
+}) {
+  return (
+    <div className={clsx("flex items-start gap-4", classname)}>
+      <div className="text-xl text-mainO">{icon}</div>
+      <div>
+        <span className="font-semibold uppercase tracking-widest">
+          {heading}
+        </span>
+        <span className="block text-xl font-semibold text-gray-500 md:text-2xl lg:text-3xl">
+          {primaryEmail}
+        </span>
+        <span className="block text-xl font-semibold text-gray-500 md:text-2xl lg:text-3xl">
+          {secondaryEmail}
         </span>
       </div>
     </div>

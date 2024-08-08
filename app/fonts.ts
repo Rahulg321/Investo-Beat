@@ -1,4 +1,4 @@
-import { Syne, Poppins, Montserrat, Hind, Fraunces } from "next/font/google";
+import { Montserrat, Fraunces } from "next/font/google";
 
 export const fraunces = Fraunces({
   subsets: ["latin"],

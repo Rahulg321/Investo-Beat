@@ -29,15 +29,13 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           Join Now
         </button>
       </div>
-      <div className="block-space basis-2/5 content-center bg-[#634876]">
-        <div className="aspect-h-1 aspect-w-1 relative md:aspect-h-3 md:aspect-w-4 md:left-[-15px] ">
-          <div>
-            <PrismicNextImage
-              field={slice.primary.hero_image}
-              fill
-              className="object-cover"
-            />
-          </div>
+      <div className="block-space  basis-2/5 content-center bg-[#634876]">
+        <div className="aspect-h-1 aspect-w-1 relative top-4">
+          <PrismicNextImage
+            field={slice.primary.hero_image}
+            className="object-cover"
+            fill
+          />
         </div>
       </div>
     </section>

@@ -32,6 +32,13 @@
             "label": "Email",
             "placeholder": ""
           }
+        },
+        "secondary_email": {
+          "type": "Text",
+          "config": {
+            "label": "Secondary Email",
+            "placeholder": ""
+          }
         }
       },
       "items": {}

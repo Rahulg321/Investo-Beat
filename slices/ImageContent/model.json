@@ -55,6 +55,15 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "image_left": {
+          "type": "Boolean",
+          "config": {
+            "label": "Image Left",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
         }
       },
       "items": {}
