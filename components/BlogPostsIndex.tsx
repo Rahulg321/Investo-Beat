@@ -1,18 +1,15 @@
-"use client";
-
 import { createClient } from "@/prismicio";
-import { usePathname, useSearchParams } from "next/navigation";
 import BlogCard from "./BlogCard";
 import BlogPagination from "./BlogPagination";
 import clsx from "clsx";
 
 export default async function BlogPostsIndex({
   classname,
+  currentPage,
 }: {
   classname?: string;
+  currentPage: number;
 }) {
-  const searchParams = useSearchParams();
-  const currentPage = searchParams.get("page") ?? 1;
   const client = createClient();
   const blogposts = await client.getByType("blogpost", {
     page: Number(currentPage),
@@ -20,7 +17,7 @@ export default async function BlogPostsIndex({
   });
 
   return (
-    <div className={clsx("py-6", classname)}>
+    <div className={clsx("container py-6", classname)}>
       <div className="blog-index">
         {blogposts.results.map((post, index) => {
           return (

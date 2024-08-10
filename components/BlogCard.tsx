@@ -19,10 +19,12 @@ const BlogCard = ({ post, classnames }: BlogCardProps) => {
         <PrismicNextImage field={featured_image} className="object-cover" />
       </div>
       <h3 className="my-2">{title}</h3>
-      <span className="mb-2 block">{small_description}</span>
+      <span className="mb-2 block text-xl font-medium">
+        {small_description}
+      </span>
       <Link
         href={`/blogs/${post.uid}`}
-        className="flex items-center gap-4 font-semibold text-mainO"
+        className="flex items-center gap-4 text-lg font-semibold text-mainO"
       >
         Read More
         <FaArrowRightLong />

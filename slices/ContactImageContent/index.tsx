@@ -37,13 +37,7 @@ const ContactImageContent = ({
             </div>
             <h3>{slice.primary.quote}</h3>
             <div>
-              <Image
-                src={signature}
-                width={90}
-                height={90}
-                alt="alisha bajaj signature"
-              />
-              <span className="text-lg font-bold">Alisha Bajaj</span>
+              <h4>Investobeat Team</h4>
             </div>
           </div>
         </div>

@@ -19,8 +19,8 @@ const Newsletter = ({ slice }: NewsletterProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="block-space"
     >
-      <div className="big-container flex flex-col border-4 md:flex-row">
-        <div className="basis-1/3">
+      <div className="container flex flex-col border-4 md:flex-row">
+        <div className="basis-3/5">
           <PrismicNextImage
             field={slice.primary.image}
             height={image.dimensions?.height}
@@ -28,11 +28,13 @@ const Newsletter = ({ slice }: NewsletterProps): JSX.Element => {
             className=""
           />
         </div>
-        <div className="basis-2/3 content-center space-y-2 p-4 text-center">
+        <div className="basis-2/5 content-center space-y-2 p-4 text-center">
           <h2 className="">{slice.primary.heading}</h2>
-          <p className="">{slice.primary.tagline}</p>
+          <p className="text-lg font-medium text-muted-foreground md:text-xl">
+            {slice.primary.tagline}
+          </p>
 
-          <form action="flex flex-col md:flex-row gap-2">
+          <form>
             <input
               type="text"
               placeholder="Email Address"

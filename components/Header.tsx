@@ -11,7 +11,7 @@ import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import Image from "next/image";
 // import logo from "@/public/CroppedLogo.png";
-import logo from "@/public/cropped-purple-logo.png";
+import logo from "@/public/logos/screenshot-logo.png";
 
 type HeaderProps = {
   classname?: string;
@@ -87,7 +87,7 @@ function NameLogo({}: {}) {
         className="font-bold text-black md:text-2xl"
       >
         <div>
-          <Image src={logo} alt="Company Logo" width={150} height={150} />
+          <Image src={logo} alt="Company Logo" width={200} height={100} />
         </div>
       </Link>
     </div>

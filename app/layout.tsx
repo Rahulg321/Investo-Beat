@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { montserrat, fraunces } from "./fonts";
+import { alegereya } from "./fonts";
 import clsx from "clsx";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={clsx(montserrat.variable, fraunces.variable)}>
+    <html lang="en" className={clsx(alegereya.variable)}>
       <body className={clsx("min-h-screen bg-background antialiased")}>
         <main className="parent-container">
           <Header />

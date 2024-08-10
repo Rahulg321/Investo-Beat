@@ -262,10 +262,81 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
+type ResearchpageDocumentDataSlicesSlice =
+  | BlogIndexSlice
+  | SectionHeadingSlice
+  | TextBlockSlice
+  | ImageContentSlice
+  | HeroSlice;
+
+/**
+ * Content for Researchpage documents
+ */
+interface ResearchpageDocumentData {
+  /**
+   * Slice Zone field in *Researchpage*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: researchpage.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ResearchpageDocumentDataSlicesSlice> /**
+   * Meta Title field in *Researchpage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: researchpage.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Researchpage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: researchpage.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Researchpage*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: researchpage.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Researchpage document from Prismic
+ *
+ * - **API ID**: `researchpage`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ResearchpageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ResearchpageDocumentData>,
+    "researchpage",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | BlogpostDocument
   | HomepageDocument
-  | PageDocument;
+  | PageDocument
+  | ResearchpageDocument;
 
 /**
  * Primary content in *BlogIndex → Primary*
@@ -859,6 +930,9 @@ declare module "@prismicio/client" {
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
+      ResearchpageDocument,
+      ResearchpageDocumentData,
+      ResearchpageDocumentDataSlicesSlice,
       AllDocumentTypes,
       BlogIndexSlice,
       BlogIndexSliceDefaultPrimary,

@@ -35,9 +35,7 @@ const BlogIndex = ({ slice }: BlogIndexProps): JSX.Element => {
               <BlogCardSkeleton />
             </div>
           }
-        >
-          <BlogPostsIndex classname="h-full" />
-        </Suspense>
+        ></Suspense>
       </div>
     </section>
   );
