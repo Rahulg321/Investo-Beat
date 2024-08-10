@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import logo from "@/public/CroppedLogo.png";
+import logo from "@/public/logos/screenshot-logo.png";
 import { nav } from "@/lib/nav";
 import Link from "next/link";
 import { FaSquareXTwitter } from "react-icons/fa6";

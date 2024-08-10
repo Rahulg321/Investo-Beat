@@ -19,7 +19,9 @@ const SectionHeading = ({ slice }: SectionHeadingProps): JSX.Element => {
     >
       <div className="block-space-large narrow-container text-center">
         <h1 className="mb-2 text-white">{slice.primary.heading}</h1>
-        <p className="text-white">{slice.primary.tagline}</p>
+        <p className="text-lg text-white md:text-xl lg:text-2xl">
+          {slice.primary.tagline}
+        </p>
       </div>
     </section>
   );

@@ -13,20 +13,16 @@ export type NewsletterProps = SliceComponentProps<Content.NewsletterSlice>;
 const Newsletter = ({ slice }: NewsletterProps): JSX.Element => {
   console.log(slice.primary.image);
   const { image } = slice.primary;
+
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="block-space"
     >
-      <div className="container flex flex-col border-4 md:flex-row">
+      <div className="flex flex-col border-4 md:flex-row">
         <div className="basis-3/5">
-          <PrismicNextImage
-            field={slice.primary.image}
-            height={image.dimensions?.height}
-            width={image.dimensions?.width}
-            className=""
-          />
+          <PrismicNextImage field={slice.primary.image} className="" />
         </div>
         <div className="basis-2/5 content-center space-y-2 p-4 text-center">
           <h2 className="">{slice.primary.heading}</h2>

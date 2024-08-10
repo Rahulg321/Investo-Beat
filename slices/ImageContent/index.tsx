@@ -19,12 +19,11 @@ const ImageContent = ({ slice }: ImageContentProps): JSX.Element => {
       className="block-space"
     >
       <div className="">
-        <div className="flex flex-col md:flex-row">
-          <div className="aspect-h-2 aspect-w-4 relative basis-1/2">
+        <div className="flex flex-col gap-4 md:flex-row">
+          <div className="basis-1/2">
             <PrismicNextImage
               field={slice.primary.featured_image}
               className="object-cover"
-              fill
             />
           </div>
           <div className="container basis-1/2 content-center md:px-10">

@@ -26,7 +26,7 @@ const ContactHero = ({ slice }: ContactHeroProps): JSX.Element => {
     >
       <div className="block-space-xl bg p px- mt-4 flex basis-3/5 flex-col justify-center md:px-12 lg:px-16">
         <div className="mb-6">
-          <h1>Contact Me</h1>
+          <h1>Contact Us</h1>
         </div>
         <ContactInfoCard
           icon={<FaLocationDot />}
